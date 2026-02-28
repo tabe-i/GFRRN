@@ -19,7 +19,7 @@
 </p>
    
 <h4>
-    <a href="">arXiv</a>
+    <a href="https://arxiv.org/abs/2602.22695">arXiv</a>
   <span> · </span>
     <a href="https://tabe-i.github.io/GFRRN-project">Project Page</a>
   <span> · </span>
