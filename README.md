@@ -12,10 +12,10 @@
     ·
     <strong>Zixuan Chen</strong></a><sup>3</sup>
     ·
-    <strong>Zheming Lu</strong></a><sup>2</sup>
+    <strong>Zheming Lu</strong></a><sup>1</sup>
     <!-- <br> -->
     <br>
-    <sup>1</sup>Huanjiang Lab, <sup>2</sup>Zhejiang University, <sup>3</sup>The Chinese University of Hong Kong
+    <sup>1</sup>Zhejiang University, <sup>2</sup>Huanjiang Lab, <sup>3</sup>The Chinese University of Hong Kong
 </p>
    
 <h4>
@@ -23,7 +23,7 @@
   <span> · </span>
     <a href="https://tabe-i.github.io/GFRRN-project">Project Page</a>
   <span> · </span>
-    <a href="">Datasets</a>
+    <a href="https://huggingface.co/datasets/tabe-i/Gap-Free">Datasets</a>
   </h4>
 </div>
 
@@ -47,7 +47,7 @@ conda create -n GFRRN python=3.10
 conda activate GFRRN
 pip install -r requirements.txt
 ```
-**Prepare Test Data and Pre-trained Model**
+**Prepare Dataset and Pre-trained Model**
 Download [GFRRN.pt](), [GFRRN_s.pt]() and [swin_large_o365_finetune.pth](). Put them in ```weights``` folder. Download datasets ([Google Drive]() or [Baidu Disk]()) and put them in ```datasets``` folder.
 
 
@@ -70,9 +70,9 @@ python train_sirs.py --name gfrrn_small_train --arch gfrrn_s --model gfrrn_model
 **Testing**
 ```shell
 # GFRRN
-python test_sirs.py --name gfrrn_test --arch gfrrn --model gfrrn_model_sirs_lrm --dataset sirs_dataset  --size_rounded --test_nature --weight_path "./weights/gfrrn.pt" --backbone_weight_path "./weights/swin_large_o365_finetune.pth" --test_dir "[YOUR_TESTING_DATA_DIR]"
+python test_sirs.py --name gfrrn_test --arch gfrrn --model gfrrn_model_sirs_lrm --dataset sirs_dataset  --size_rounded --test_nature --weight_path "./weights/GFRRN.pt" --backbone_weight_path "./weights/swin_large_o365_finetune.pth" --test_dir "[YOUR_TESTING_DATA_DIR]"
 # GFRRN_s
-python test_sirs.py --name gfrrn_small_test --arch gfrrn_s --model gfrrn_model_sirs_lrm --dataset sirs_dataset  --size_rounded --test_nature --weight_path "./weights/gfrrn_s.pt" --backbone_weight_path "./weights/swin_large_o365_finetune.pth" --test_dir "[YOUR_TESTING_DATA_DIR]"
+python test_sirs.py --name gfrrn_small_test --arch gfrrn_s --model gfrrn_model_sirs_lrm --dataset sirs_dataset  --size_rounded --test_nature --weight_path "./weights/GFRRN_s.pt" --backbone_weight_path "./weights/swin_large_o365_finetune.pth" --test_dir "[YOUR_TESTING_DATA_DIR]"
 ```
 
 ### :star2: Acknowledgements
@@ -81,7 +81,15 @@ This project is developped on the codebase of [DSIT](https://github.com/mingcv/D
 ### :love_you_gesture: Citation
 If you find our paper and repo are helpful for your research, please consider citing:
 ```BibTeX
-coming soon
+@article{chen2026gfrrn,
+      title={GFRRN: Explore the Gaps in Single Image Reflection Removal}, 
+      author={Yu Chen and Zewei He and Xingyu Liu and Zixuan Chen and Zheming Lu},
+      year={2026},
+      eprint={2602.22695},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.22695}, 
+}
 ```
 
 <!-- Contact -->
